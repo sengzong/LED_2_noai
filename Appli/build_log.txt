@@ -1,0 +1,18 @@
+arm-none-eabi-gcc -o "LED_2_Appli.elf" @"objects.list"   -mcpu=cortex-m55 -T"F:\stm32CubeIde\Project\LED_2\Appli\STM32N647X0HXQ_ROMxspi2_RAMxspi1.ld" --specs=nosys.specs -Wl,-Map="LED_2_Appli.map" -Wl,--gc-sections -static -Wl,--cmse-implib -Wl,--out-implib=./secure_nsclib.o --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LED_2_Appli.elf
+ 
+arm-none-eabi-size  LED_2_Appli.elf 
+arm-none-eabi-objdump -h -S LED_2_Appli.elf  > "LED_2_Appli.list"
+arm-none-eabi-objcopy  -O binary LED_2_Appli.elf  "LED_2_Appli.bin"
+   text	   data	    bss	    dec	    hex	filename
+  63664	    188	4112580	4176432	 3fba30	LED_2_Appli.elf
+Finished building: default.size.stdout
+ 
+Finished building: LED_2_Appli.bin
+ 
+Finished building: LED_2_Appli.list
+ 
+bash "../postbuild.sh"
+-rw-rw-r--    1 ls       ls          179691 Aug 30 22:07 F:/stm32CubeIde/Project/LED_2/Appli/../Binary/appli.hex
+postbuild: appli.hex 已生成 (0x70100400)
+ 

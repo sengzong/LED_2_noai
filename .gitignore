@@ -1,0 +1,15 @@
+# ----- STM32CubeIDE 构建产物(自动生成,不入库) -----
+Debug/
+Release/
+*.o
+*.d
+*.map
+*.elf
+*.axf
+*.lst
+
+# ----- 个人本地文件(不开源) -----
+LOCAL_NOTES.md
+
+# ----- 杂项 -----
+*.bak
